@@ -1,0 +1,317 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #ded7cd;
+    background-color: #121110;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  code, kbd, samp, pre, .font-mono {
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+}
+
+/* Vintage custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181614;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38322c;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #544b42;
+}
+
+/* CRT / amber subtle phosphor glow for active elements */
+.amber-glow {
+  text-shadow: 0 0 6px rgba(245, 158, 11, 0.45);
+}
+
+.amber-box-glow {
+  box-shadow: 0 0 8px rgba(217, 119, 6, 0.35);
+}
+
+/* Strict High Contrast Mode (EdSim51 Readability) */
+.high-contrast {
+  color: #ffffff !important;
+  background-color: #000000 !important;
+}
+
+.high-contrast * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  filter: none !important;
+}
+
+.high-contrast .border,
+.high-contrast [class*="border-"] {
+  border-color: #71717a !important;
+}
+
+.high-contrast button {
+  box-shadow: none !important;
+}
+
+.high-contrast .bg-\[\#121110\],
+.high-contrast .bg-\[\#141210\],
+.high-contrast .bg-\[\#161412\],
+.high-contrast .bg-\[\#181614\],
+.high-contrast .bg-\[\#1c1917\],
+.high-contrast .bg-\[\#100e0c\],
+.high-contrast .bg-\[\#0c0a09\],
+.high-contrast .bg-\[\#24201c\],
+.high-contrast .bg-\[\#26221e\],
+.high-contrast .bg-\[\#292524\],
+.high-contrast .bg-\[\#1e1b17\] {
+  background-color: #000000 !important;
+}
+
+.high-contrast .text-\[\#a8a29e\],
+.high-contrast .text-\[\#8c8275\],
+.high-contrast .text-\[\#786f64\],
+.high-contrast .text-\[\#78716c\],
+.high-contrast .text-\[\#6b6255\],
+.high-contrast .text-\[\#5c5348\],
+.high-contrast .text-\[\#d4ccc2\],
+.high-contrast .text-\[\#ded7cd\] {
+  color: #ffffff !important;
+}
+
+.high-contrast .border-\[\#44403c\],
+.high-contrast .border-\[\#38332c\],
+.high-contrast .border-\[\#524d43\],
+.high-contrast .border-\[\#3f3b33\],
+.high-contrast .border-\[\#2b2621\],
+.high-contrast .border-\[\#383129\],
+.high-contrast .border-\[\#26221d\] {
+  border-color: #71717a !important;
+}
+
+/* =========================================================================
+   Balanced Ergonomic Light Mode (Long-duration simulation sessions)
+   Engineering-grade palette: Slate-100 base, crisp white surfaces,
+   deep slate typography (Slate-900), and soft amber/cyan hardware accents.
+   ========================================================================= */
+
+html.light-mode,
+body.light-mode,
+.light-mode {
+  color: #0f172a;
+  background-color: #f1f5f9;
+}
+
+body.light-mode {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Light mode custom scrollbars */
+.light-mode ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Base surface containers */
+.light-mode .bg-\[\#121110\],
+.light-mode .bg-\[\#0d0c0b\],
+.light-mode .bg-\[\#0d1117\],
+.light-mode .bg-\[\#0b0f14\],
+.light-mode .bg-\[\#100e0c\],
+.light-mode .bg-\[\#0c0a09\],
+.light-mode .bg-\[\#0e0d0c\],
+.light-mode .bg-\#121110 {
+  background-color: #f1f5f9 !important;
+}
+
+/* Panel, window, card & modal surfaces */
+.light-mode .bg-\[\#1c1917\],
+.light-mode .bg-\[\#141210\],
+.light-mode .bg-\[\#161b22\],
+.light-mode .bg-\[\#1a1714\],
+.light-mode .bg-\[\#181614\],
+.light-mode .bg-\[\#1e1b17\],
+.light-mode .bg-\[\#1f1b17\],
+.light-mode .bg-\[\#1c1815\],
+.light-mode .bg-\[\#111827\],
+.light-mode .bg-\[\#141210\]\/90 {
+  background-color: #ffffff !important;
+}
+
+/* Secondary surfaces, inputs, buttons, chips & nested panels */
+.light-mode .bg-\[\#292524\],
+.light-mode .bg-\[\#21262d\],
+.light-mode .bg-\[\#2a241b\],
+.light-mode .bg-\[\#26221e\],
+.light-mode .bg-\[\#38332c\],
+.light-mode .bg-\[\#30363d\],
+.light-mode .bg-\[\#25211c\],
+.light-mode .bg-\[\#2d2924\],
+.light-mode .bg-\[\#29221a\],
+.light-mode .bg-\[\#1e1a16\],
+.light-mode .bg-\[\#26221f\],
+.light-mode .bg-\[\#2b2723\],
+.light-mode .bg-\[\#36302a\],
+.light-mode .bg-\[\#28231d\],
+.light-mode .bg-\[\#2d251d\],
+.light-mode .bg-\[\#1f1c19\] {
+  background-color: #f8fafc !important;
+}
+
+/* Hover effects for buttons and cards */
+.light-mode .hover\:bg-\[\#292524\]:hover,
+.light-mode .hover\:bg-\[\#26221f\]:hover,
+.light-mode .hover\:bg-\[\#21262d\]:hover,
+.light-mode .hover\:bg-\[\#30363d\]:hover,
+.light-mode .hover\:bg-\[\#38332c\]:hover,
+.light-mode .hover\:bg-\[\#2e2a25\]:hover,
+.light-mode .hover\:bg-\[\#36302a\]:hover {
+  background-color: #e2e8f0 !important;
+}
+
+/* Primary text: Rich readable Slate 900 */
+.light-mode .text-\[\#ffffff\],
+.light-mode .text-\[\#ded7cd\],
+.light-mode .text-\[\#e2e8f0\],
+.light-mode .text-\[\#e7e5e4\],
+.light-mode .text-\[\#e6ded5\],
+.light-mode .text-\[\#cbd5e1\],
+.light-mode .text-\[\#c9d1d9\],
+.light-mode .text-\[\#d4ccc2\],
+.light-mode .text-\[\#d6d3d1\],
+.light-mode .text-\[\#d4d4d8\],
+.light-mode .text-\[\#f4efe8\] {
+  color: #0f172a !important;
+}
+
+/* Muted & secondary labels: Slate 600 / Slate 500 */
+.light-mode .text-\[\#a8a29e\],
+.light-mode .text-\[\#78716c\],
+.light-mode .text-\[\#8b949e\],
+.light-mode .text-\[\#94a3b8\],
+.light-mode .text-\[\#8c8275\],
+.light-mode .text-\[\#786f64\],
+.light-mode .text-\[\#6b6255\],
+.light-mode .text-\[\#64748b\],
+.light-mode .text-\[\#5c5348\] {
+  color: #475569 !important;
+}
+
+/* Amber highlights: Deeper amber so they pop cleanly on light backgrounds */
+.light-mode .text-\[\#fbbf24\],
+.light-mode .text-\[\#f59e0b\],
+.light-mode .text-\[\#fcd34d\],
+.light-mode .text-\[\#fef08a\] {
+  color: #b45309 !important;
+}
+
+/* Cyan highlights: Deep Sky Blue */
+.light-mode .text-\[\#38bdf8\],
+.light-mode .text-\[\#22d3ee\],
+.light-mode .text-\[\#06b6d4\] {
+  color: #0284c7 !important;
+}
+
+/* Green highlights: Rich emerald */
+.light-mode .text-\[\#22c55e\],
+.light-mode .text-\[\#4ade80\],
+.light-mode .text-\[\#34d399\],
+.light-mode .text-\[\#10b981\],
+.light-mode .text-\[\#6ee7b7\] {
+  color: #15803d !important;
+}
+
+/* Red highlights: Rich crimson */
+.light-mode .text-\[\#fca5a5\],
+.light-mode .text-\[\#f87171\] {
+  color: #b91c1c !important;
+}
+
+/* Borders: Balanced Slate borders */
+.light-mode .border-\[\#524d43\],
+.light-mode .border-\[\#44403c\],
+.light-mode .border-\[\#38332c\],
+.light-mode .border-\[\#30363d\],
+.light-mode .border-\[\#2b2723\],
+.light-mode .border-\[\#2d2924\],
+.light-mode .border-\[\#25211c\],
+.light-mode .border-\[\#26221d\],
+.light-mode .border-\[\#57534e\],
+.light-mode .border-\[\#1e293b\],
+.light-mode .border-\[\#1f1d1a\],
+.light-mode .border-\[\#292524\],
+.light-mode .border-\[\#383129\],
+.light-mode .border-\[\#382f25\],
+.light-mode .border-\[\#666055\],
+.light-mode .border-\[\#785b34\],
+.light-mode .border-\[\#4a4237\],
+.light-mode .border-\[\#574e44\] {
+  border-color: #cbd5e1 !important;
+}
+
+/* Amber subtle glow adjustments for light mode */
+.light-mode .amber-glow {
+  text-shadow: none !important;
+  color: #b45309 !important;
+}
+
+.light-mode .amber-box-glow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Code Editor in Light Mode */
+.light-mode textarea {
+  color: transparent !important;
+  caret-color: #0f172a !important;
+}
+
+.light-mode textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Modal backdrop in light mode */
+.light-mode .bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.55) !important;
+}
+
+/* Selection color in light mode */
+.light-mode ::selection {
+  background-color: #fde68a !important;
+  color: #78350f !important;
+}
+
+/* Strict High Contrast Mode takes complete priority if active */
+.high-contrast.light-mode,
+.high-contrast {
+  color: #ffffff !important;
+  background-color: #000000 !important;
+}
+
