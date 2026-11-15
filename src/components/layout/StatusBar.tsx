@@ -36,7 +36,7 @@ export const StatusBar: React.FC<StatusBarProps> = ({
   level = 'intermediate',
   className = '',
   theme = 'dark',
-  copyrightAuthors = '© 2026 Vineet Sharma , Chaman Vashishth',
+  copyrightAuthors = '© 2026 Vineet Sharma',
 }) => {
   const clockMhz = (clockHz / 1000000).toFixed(clockHz === 11059200 ? 4 : 0);
   
