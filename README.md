@@ -160,6 +160,6 @@ Please check the repository for a license before redistributing or reusing this 
 
 Built for learning, experimenting, and making 8051 concepts easier to understand.
 
-**© 2026 Vineet Sharma and Chaman Vashishth**
+**© 2026 Vineet Sharma**
 
 </div>
