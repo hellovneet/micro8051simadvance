@@ -281,6 +281,6 @@ No `LICENSE` file was present in the inspected repository snapshot. Until a lice
 
 **Micro8051SiM** · Understand the machine, one instruction at a time.
 
-<sub>Project credits in the current application metadata: Vineet Sharma and Chaman Vashishth.</sub>
+<sub>Project credits in the current application metadata: Vineet Sharma.</sub>
 
 </div>
